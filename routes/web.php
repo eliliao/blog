@@ -412,16 +412,7 @@
 
 // ---------------------
 
-Route::get('/',function (){
-    $name = 'eli';
-    $age = 20;
-    $tasks = [
-        '唱歌',
-        '喝酒',
-        '吃飯',
-    ];
-    return view('welcome', compact('name' , 'age' , 'tasks'));
-});
+Route::get('/','HomeController@index');
 
     
 

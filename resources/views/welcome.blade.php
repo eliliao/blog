@@ -6,12 +6,11 @@
 
 要做的家事:
 <ul>
-   <?php foreach ($tasks as $tasks_name): ?>
     @foreach ($tasks as $task_name)
-    
-        <li> {{ $tasks_name }} </li>
 
-   <?php endforeach ?>
+        <li> {{ $task_name }} </li>
+
+   @endforeach
 </ul>
 
 </html>
