@@ -414,9 +414,6 @@
 
 Route::get('/','HomeController@index');
 
-    
-
-
 
 
 

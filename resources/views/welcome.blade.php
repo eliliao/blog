@@ -6,9 +6,9 @@
 
 要做的家事:
 <ul>
-    @foreach ($tasks as $task_name)
+    @foreach ($tasks as $task_object)
 
-        <li> {{ $task_name }} </li>
+        <li> {{ $task_object->name }} </li>
 
    @endforeach
 </ul>

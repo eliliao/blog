@@ -6,15 +6,17 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    
     public function index()
     {
-    	$name = 'eli';
-    	$age = 20;
-    	$tasks = [
-    	    '唱歌',
-    	    '喝酒',
-    	    '吃飯',
-    	];
-    	return view('welcome', compact('name' , 'age' , 'tasks'));
+      $name = 'eli';
+      $age = 27;
+
+      $tasks = \DB::table('tasks')->get();
+
+     // dd($tasks)
+
+    return view('welcome',compact('name','age','tasks'));
+
     }
 }
