@@ -18,4 +18,9 @@ class HomeController extends Controller
       return view('welcome',compact('name','age','tasks'));
 
     }
+    public function show($id)
+    {
+        return Task::find($id);
+    }
+
 }
