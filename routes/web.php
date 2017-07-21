@@ -412,9 +412,9 @@
 
 // ---------------------
 
-Route::get('/','HomeController@index');
+Route::get('task','TaskController@index');
 
-Route::get('task/{id}','HomeController@show');
+Route::get('task/{id}','TaskController@show');
 
 
 
