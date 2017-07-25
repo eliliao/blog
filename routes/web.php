@@ -416,6 +416,8 @@ Route::get('task','TaskController@index');
 
 Route::get('task/{id}','TaskController@show');
 
+Route::get('articles','ArticlesController@index');
 
+Route::get('articles/{id}','ArticlesController@show');
 
 

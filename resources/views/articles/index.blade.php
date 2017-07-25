@@ -4,7 +4,7 @@
 <h1> Hello, {{ $name }} </h1>
 <p> Your age is : <?php echo $age;?> </p>
 
-這一週的待辦事項:
+要做的家事:
 <ul>
     @foreach ($articles as $articles_object)
 
