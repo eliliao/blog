@@ -18,7 +18,7 @@ class ArticlesController extends Controller
       return view('welcome',compact('name','age','articles'));
       // 回傳view : task/index.blade.php，並帶回以上的變數們
     }
-    public function show($id) //接收從route/web.php 設定的id
+    public function show($id) // 接收從route/web.php 設定的id
     {
     	$articles = articles::find($id); 
       //建立一個變數,值是到 articles table 抓回該id的資料

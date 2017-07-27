@@ -414,10 +414,19 @@
 
 Route::get('task','TaskController@index');
 
+Route::get('task/create','TaskController@create');//{}是route的語法 代表/後的任何文字都會被當成id,符合格式的就會被歸類到裡面
+
+Route::post('task','TaskController@store');
+
 Route::get('task/{id}','TaskController@show');
+
+
+
+
 
 Route::get('articles','ArticlesController@index');
 
-Route::get('articles/{id}','ArticlesController@show');
+Route::get('articles/{id}','ArticlesController@show'); 
+
 
 
