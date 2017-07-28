@@ -418,11 +418,11 @@ Route::get('task/create','TaskController@create');//{}是route的語法 代表/�
 
 Route::post('task','TaskController@store');
 
+Route::get('task/{id}/edit','TaskController@edit');
+
+Route::put('task/{id}','TaskController@update');
+
 Route::get('task/{id}','TaskController@show');
-
-
-
-
 
 Route::get('articles','ArticlesController@index');
 
