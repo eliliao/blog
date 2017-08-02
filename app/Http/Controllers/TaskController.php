@@ -56,7 +56,7 @@ class TaskController extends Controller
       $task->update([
       //把該筆資料的欄位,更新成表單的資料,並寫入到tasks table 
         'name'=> request()->input('name'),
-        //name的欄位,要使用form裡面的name輸入框的值
+        //DB name的欄位,要使用form傳送到form裡面的name輸入框的值
         
         'description' => request()->input('description')
         //description 的欄位,要使用form裡面的description輸入框的值

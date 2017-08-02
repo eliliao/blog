@@ -424,9 +424,7 @@ Route::put('task/{id}','TaskController@update');
 
 Route::get('task/{id}','TaskController@show');
 
-Route::get('articles','ArticlesController@index');
+Route::get('articles','articlesController@index');
 
-Route::get('articles/{id}','ArticlesController@show'); 
-
-
+Route::get('articles','articlesController@show');
 
