@@ -424,7 +424,18 @@ Route::put('task/{id}','TaskController@update');
 
 Route::get('task/{id}','TaskController@show');
 
-Route::get('articles','articlesController@index');
+Route::get('articles','ArticlesController@index');
 
-Route::get('articles','articlesController@show');
+Route::get('articles/{id}/edit','ArticlesController@edit');
+
+Route::put('articles/{id}','ArticlesController@update');
+
+Route::get('articles/{id}','ArticlesController@show');
+
+Route::get('articles/create','ArticlesController@create');//{}是route的語法 代表/後的任何文字都會被當成id,符合格式的就會被歸類到裡面
+
+Route::post('articles','ArticlesController@store');
+
+
+
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+  namespace App\Http\Controllers;
 
 use App\Task;
 use Illuminate\Http\Request;
@@ -68,7 +68,7 @@ class TaskController extends Controller
 
     public function show($id)
     {
-    	$task = task::find($id); //接收從routes/web.php 設定的 id
+    	$task = Task::find($id); //接收從routes/web.php 設定的 id
 
       return view('task.show')->with(compact('task'));
     } 
