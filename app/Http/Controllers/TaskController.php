@@ -73,4 +73,22 @@ class TaskController extends Controller
       return view('task.show')->with(compact('task'));
     } 
 
+   public function destroy($id)
+    {
+      //建立一個變數task,值是到task table 抓回該id的資料
+    
+    $task = Task::find($id);
+      //刪除該筆資料
+
+    $task->delete();
+      //把該筆資料的欄位,更新成表單的資料,並寫入到tasks table 
+
+    return redirect()->to('/task');
+      // 回到tasks列表頁面
+
+    }
+
+
+
+
 }

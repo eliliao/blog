@@ -436,6 +436,8 @@ Route::get('articles/create','ArticlesController@create');//{}是route的語法 
 
 Route::post('articles','ArticlesController@store');
 
+Route::delete('task/{id}','TaskController@destroy');
+
 
 
 

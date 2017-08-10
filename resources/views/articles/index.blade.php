@@ -30,9 +30,14 @@
    					<a href="/articles/{{ $articles_object->id }}/edit">
    						修改	
    					</a>
-   					&nbsp;
+   					&nbsp;  
+            {{ csrf_field() }}  {{-- 安全機制 token碼 防止來自外部的表單送資料進來--}}
+            {{-- 因為html只支援GET&POST,所以要用另外的input帶上PUT --}}
+            {{-- <input type="hidden" name="_method" value="PUT"> --}}
+            {{ method_field('delete') }}
    					<a href="#">
    						刪除
+            <input type="submit" value="送出">
    					</a>
    				</td>
    			</tr>		
