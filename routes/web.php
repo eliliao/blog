@@ -64,7 +64,7 @@
 //         'Stream' => [
 //         	'age' => '20',
 //         	'gender' => 'male',
-//         	'time' => '10'     
+//         	'time' => '10'
 //         ],
 //         'Sid'=> [
 //         	'age' => '20',
@@ -88,14 +88,14 @@
 //         ]
 //     ];
 //     foreach ($members as $members_name => $member_data) {
-//         echo $members_name .'<br>' . '性別:' . $member_data['gender'] .'<br>' . 
+//         echo $members_name .'<br>' . '性別:' . $member_data['gender'] .'<br>' .
 //                              '年齡:' . $member_data['age'] . '<br>' .
-//                              '時間:' . $member_data['time'] . '<br>'; 
+//                              '時間:' . $member_data['time'] . '<br>';
 //     }
 // });
 
 // function tripleA($number_a){
-//       return $number_a * 3; 
+//       return $number_a * 3;
 // }
 
 // Route::get('/function_practice', function () {
@@ -152,27 +152,27 @@
 //     echo checkRemainderOfNumber(4); // 這是偶數
 //     echo '<br>';
 //     echo checkRemainderOfNumber(6); // 這是偶數
-// }); 
+// });
 
 
 // // 算出陣列裡有幾個偶數
-// function getEvenNumbersCount($all_numbers){ 
+// function getEvenNumbersCount($all_numbers){
 //     // 建立一個變數 用來紀錄偶數有幾個 total本身就是計數器
 //     $total = 0;
-//     // 用foreach 走訪整個陣列裡的元素 foreach唯一個功能就是走訪陣列 陣列裡面有幾個數字 
+//     // 用foreach 走訪整個陣列裡的元素 foreach唯一個功能就是走訪陣列 陣列裡面有幾個數字
 //        寫法：foreach(迴圈名稱 as $value)<= 一定是填 $value
 //     foreach ($all_numbers as $number ) {
 //         // 建立一個變數,紀錄單一元素/2的餘數
 //         $remainder = $number % 2;
-//         // 用if檢查於數是否為0 
+//         // 用if檢查於數是否為0
 //         if ( $remainder == 0) {
 //             //如果是的話 total就加1
 //             $total = $total + 1 ;
-//         } 
+//         }
 //     }
 //     //回傳整個function的結果
-//     return $total ; 
-// } 
+//     return $total ;
+// }
 
 
 // 範例3
@@ -185,16 +185,16 @@
 // });
 
 
-// function getEvenNumbersCount($all_numbers){ 
+// function getEvenNumbersCount($all_numbers){
 //     $total = 0;
 //     foreach ($all_numbers as $number ) {
-//         $remainder = $number % 2; 
+//         $remainder = $number % 2;
 //         if ( $remainder == 0) {
 //             $total = $total + 1 ;
-//         } 
+//         }
 //     }
-//     return $total ; 
-// } 
+//     return $total ;
+// }
 
 // Route::get('/function_practice', function () {
 //     $numbers_to_check = [1,2,3,4,5];
@@ -248,16 +248,16 @@
 // });
 
 // // 回家作業1 解法1
-// function dividedBy($DivideNumbers){ 
+// function dividedBy($DivideNumbers){
 //     $total = 0;
 //     foreach ($DivideNumbers as $number ) {
-//         $Divide = $number / 2; 
+//         $Divide = $number / 2;
 //         if ( $Divide > 50) {
 //             $total = $total + 1 ; // $total++;
-//         } 
+//         }
 //     }
-//     return $total ; 
-// } 
+//     return $total ;
+// }
 
 // Route::get('/function_practice/homework1', function () {
 //      $numbersValue = [1000,500,250,125,62.5,31.25];
@@ -266,14 +266,14 @@
 
 
 // // 回家作業1 解法2
-// function dividedByCopy($DivideNumbers){ 
+// function dividedByCopy($DivideNumbers){
 //     foreach ($DivideNumbers as $key => $number ) {
-//         $Divide = $number / 2; 
+//         $Divide = $number / 2;
 //         if ( $Divide < 50) {
 //             return $key + 1 ;
-//         } 
+//         }
 //     }
-// } 
+// }
 
 // Route::get('/function_practice/homework1', function () {
 //     $numbersValue = [1000,500,250,125,62.5,31.25];
@@ -284,21 +284,21 @@
 // // // 回家作業1 解法3
 // function dividedByStream($ml) {
 //     $ml = 1000;
-//     for ($index = 1 ; ; $index++ ) { 
+//     for ($index = 1 ; ; $index++ ) {
 //         $ml = $ml / 2;
 //         if ( $ml < 50) {
 //             return $index ;
-//         } 
+//         }
 //     }
 // }
 
 // // // 回家作業1 解法4
 // function dividedByFor($DivideNumbers) {
-//     for ($index = 0 ; $index < count($DivideNumbers); $index++ ) { 
+//     for ($index = 0 ; $index < count($DivideNumbers); $index++ ) {
 //         $Divide = $DivideNumbers[$index] / 2;
 //         if ( $Divide < 50) {
 //             return $index + 1 ;
-//         } 
+//         }
 //     }
 // }
 
@@ -319,7 +319,7 @@
 
 
 // //6/16 課堂 自動用除法排列組合的計數器
-// function steps($max) {  
+// function steps($max) {
 //     $arr_numbers = [];  //因為要求的是陣列,所以要先定義出一個空的array
 //     for ($i = 1; $i < $max; $i++) {  //用for解題, 變數從1開始計算,跑完一次迴圈就加1,數值要小於 $max
 //         $arr_numbers[] = $max; // 加入一個數值到array內,這個值就是 $max
@@ -347,7 +347,7 @@
 // function multiplied($max) {
 //     $arr_numbers = [];
 
-//     for ($i = 1 ; $i < $max ; $i *= 2) { 
+//     for ($i = 1 ; $i < $max ; $i *= 2) {
 //         $arr_numbers[] = $i;
 //     }
 //     return $arr_numbers;
@@ -355,8 +355,8 @@
 
 
 // Route::get('/function_practice/homework3', function () {
-//     $max = 200; 
-//     dd(multiplied($max)); 
+//     $max = 200;
+//     dd(multiplied($max));
 // });
 
 
@@ -377,8 +377,8 @@
 // }
 
 // Route::get('/function_practice/homework4', function () {
-//     $max = 100; 
-//     dd(Subtraction($max)); 
+//     $max = 100;
+//     dd(Subtraction($max));
 // });
 
 
@@ -392,7 +392,7 @@
 // function stepMultiply($max) {
 //     $multiple_result = 1; // 乘績
 //     $multiplyer = 1;      // 被乘數
-    
+
 
 //     for ($i=0 ; ; $i++ ) {
 //         $multiple_result *= $multiplyer;
@@ -401,7 +401,7 @@
 //         if ($multiple_result > $max) {
 //             return $i;
 //         }
-//     }            
+//     }
 // }
 
 // Route::get('/function_practice/homework5', function () {
@@ -438,6 +438,20 @@ Route::post('articles','ArticlesController@store');
 
 Route::delete('task/{id}','TaskController@destroy');
 
+Route::delete('articles/{id}','articlesController@destroy');
 
 
 
+Route::get('category','CategoryController@index');
+
+Route::get('category/create','CategoryController@create');
+
+Route::get('category/{id}/edit','CategoryController@edit');
+
+Route::put('category/{id}','CategoryController@update');
+
+Route::get('category/{id}','CategoryController@show');
+
+Route::post('category','CategoryController@store');
+
+Route::delete('category/{id}','CategoryController@destroy');

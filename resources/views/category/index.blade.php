@@ -9,13 +9,7 @@
   <!-- fontawesome minified CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<meta charset="utf-8">
-  <title>Bootstrap 实例 - 条纹表格</title>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
+</head>
 
 <body>
 
@@ -35,8 +29,8 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/articles">文章管理 <span class="sr-only">(current)</span></a></li>
-          <li><a href="/articles">文章管理</a></li>
+          <li class="active"><a href="/category">目錄功能 <span class="sr-only">(current)</span></a></li>
+          <li><a href="/category">檢索頁面</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
@@ -57,14 +51,14 @@
   </nav>
 
   <div class="container">
-    <h1 class='page-header'> 文章管理系統, {{ $name }} </h1>
+    <h1 class='page-header'> 目錄 </h1>
     <p></p>
 
-    <a href="/articles/create" class="btn btn-danger">
-      <i class="glyphicon glyphicon-plus"></i> 新增一篇文章
+    <a href="/category/create" class="btn btn-danger">
+      <i class="glyphicon glyphicon-plus"></i> 新增目錄
     </a>   {{-- 7/27上課新增 --}}
     {{-- 套boostrap css的方法很簡單
-     <a href="/task/create" class="btn btn-danger">
+     <a href="/category/create" class="btn btn-danger">
        新增ㄧ件家事
      </a>
      --}}
@@ -75,31 +69,33 @@
 
     <table>
       <thead>
-        <tr >
-          <th style="text-align:left">ID</th>
-          <th style="text-align:left">名稱</th>
-          <th style="text-align:left">操作</th>
+        <tr>
+          <th class="fa fa-pencil" style="text-align:left">書名</th>
+          &nbsp;&nbsp;
+          <th class="fa fa-pencil" style="text-align:left">名稱</th>
+          &nbsp;&nbsp;
+          <th class="fa fa-pencil" style="text-align:left">操作</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($articles as $articles_object)
+        @foreach ($category as $category_object)
           <tr>
-            <td>{{ $articles_object->id }}</td>
+            <td>{{ $category_object->id }}</td>
             <td>
-              <a href="/articles/{{ $articles_object->id }}">
-                     {{ $articles_object->name }}
+              <a href="/category/{{ $category_object->id }}">
+                     {{ $category_object->name }}
                 </a>
             </td>
             <td>
               &nbsp;&nbsp;
-              <form method="POST" action="/articles/{{ $articles_object->id }}">
+              <form method="POST" action="/category/{{ $category_object->id }}">
                 {{ csrf_field() }}  {{-- 安全機制 token碼 防止來自外部的表單送資料進來--}}
                 {{-- 因為html只支援GET&POST,所以要用另外的input帶上PUT --}}
                 {{-- <input type="hidden" name="_method" value="PUT"> --}}
                 {{ method_field('delete') }}
 
                 <button type="submit" class="btn btn-danger">
-                  <a href="/articles/{{ $articles_object->id }}/edit">
+                  <a href="/category/{{ $category_object->id }}/edit">
                     <i class="fa fa-pencil"></i>修改
                   </a>
                 </button>
@@ -117,7 +113,7 @@
       </tbody>
 
       <ul>
-        @foreach ($articles as $articles_object)
+        @foreach ($category as $category_object)
 
           <li></li>
 
@@ -134,5 +130,3 @@
 
   </body>
 </html>
-
-
