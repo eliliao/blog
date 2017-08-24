@@ -1,9 +1,9 @@
 <html>
 <head>
- @include('task.head')
+ @include('partial.head')
 </head>
 <body>
-@include('task.navbar')
+@include('partial.navbar')
 <div class='container'>
 	<h1 class='page-header'>修改家事表單</h1>
 
@@ -23,6 +23,6 @@
 	<br>
 		<input type="submit" value="送出">
 </form>
-	@include('task.scripts')
+	@include('partial.scripts')
 </body>
 </html>

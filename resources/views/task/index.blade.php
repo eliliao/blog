@@ -1,14 +1,6 @@
-<!doctype html>
-<html>
-<head>
- @include('task.head')
-</head>
-
-<body>
-
-@include('task.navbar')
-
-  <div class="container">
+@extends('layout')
+@section('content')
+<div class="container">
     <h1 class='page-header'> 家事管理,</h1>
     <p></p>
 
@@ -76,6 +68,5 @@
         @endforeach
       </ul>
     </div>
-@include('task.scripts')
-  </body>
-</html>
+
+@endsection
