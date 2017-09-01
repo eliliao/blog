@@ -412,17 +412,23 @@
 
 // ---------------------
 
-Route::get('task','TaskController@index');
+// Route::get('task','TaskController@index');
 
-Route::get('task/create','TaskController@create');//{}是route的語法 代表/後的任何文字都會被當成id,符合格式的就會被歸類到裡面
+// Route::get('task/create','TaskController@create');
+// //{}是route的語法 代表/後的任何文字都會被當成id,符合格式的就會被歸類到裡面
 
-Route::post('task','TaskController@store');
+// Route::post('task','TaskController@store');
 
-Route::get('task/{id}/edit','TaskController@edit');
+// Route::get('task/{id}/edit','TaskController@edit');
 
-Route::put('task/{id}','TaskController@update');
+// Route::put('task/{id}','TaskController@update');
 
-Route::get('task/{id}','TaskController@show');
+// Route::get('task/{id}','TaskController@show');
+
+// Route::delete('task/{id}','TaskController@destroy');
+
+Route::resource('task','TaskController');
+
 
 Route::get('articles','ArticlesController@index');
 
@@ -432,11 +438,10 @@ Route::put('articles/{id}','ArticlesController@update');
 
 Route::get('articles/{id}','ArticlesController@show');
 
-Route::get('articles/create','ArticlesController@create');//{}是route的語法 代表/後的任何文字都會被當成id,符合格式的就會被歸類到裡面
+Route::get('articles/create','ArticlesController@create');
+//{}是route的語法 代表/後的任何文字都會被當成id,符合格式的就會被歸類到裡面
 
 Route::post('articles','ArticlesController@store');
-
-Route::delete('task/{id}','TaskController@destroy');
 
 Route::delete('articles/{id}','articlesController@destroy');
 

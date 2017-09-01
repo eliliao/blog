@@ -1,138 +1,104 @@
 <!doctype html>
 <html>
 
-<head>
+  <style>
+    .table-middle > tbody > tr > td {
+      vertical-align: middle;
+  }
 
-  <!-- Boostrap minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    .table-middle > tbody > tr > td > form {
+      vertical-align: middle;
+  }
 
-  <!-- fontawesome minified CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</style>
+    <head>
+      @include('articles.head')
+    </head>
+      <meta charset="utf-8">
+        <title> Eli workshop </title>
+      <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js">
+      </script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+</head>
+    <body>
+      @include('articles.navbar')
+        <div class="container">
+          <h1 class='page-header'> 文章管理系統 </h1>
+          <p></p>
 
-<meta charset="utf-8">
-  <title>Bootstrap 实例 - 条纹表格</title>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
-<body>
-
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Stream Workshop</a>
+          <div class="row">
+            <div class="col-xs-7">
+              <a href="/articles/create" class="btn btn-danger btn-block">
+                <i class="glyphicon glyphicon-plus"></i> 新增一篇文章
+              </a>   
+          {{-- 7/27上課新增 --}}
+          {{-- 套boostrap css的方法很簡單
+          <a href="/task/create" class="btn btn-danger">
+          新增ㄧ件家事
+          </a>  
+          --}}    
+          </div>
+        <div class="col-xs-5">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <a href="/articles/create">
+                <button class="btn btn-default" type="button">Go!</button>
+              </a>
+            </span>
+          
+          </div><!-- /input-group -->  
+        </div>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/articles">文章管理 <span class="sr-only">(current)</span></a></li>
-          <li><a href="/articles">文章管理</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <img src="https://scontent.ftpe8-3.fna.fbcdn.net/v/t1.0-9/310161_312243918791479_516709523_n.jpg?oh=86235d5a1cabe59a57cffa3f27421d91&oe=5A29650C" style="height:  20px;width: 20px" class="img-circle">
-            Eli <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+    <table class="table table-bordered table-middle">
 
-  <div class="container">
-    <h1 class='page-header'> 文章管理系統, {{ $name }} </h1>
-    <p></p>
-
-    <a href="/articles/create" class="btn btn-danger">
-      <i class="glyphicon glyphicon-plus"></i> 新增一篇文章
-    </a>   {{-- 7/27上課新增 --}}
-    {{-- 套boostrap css的方法很簡單
-     <a href="/task/create" class="btn btn-danger">
-       新增ㄧ件家事
-     </a>
-     --}}
-
-    <br>
-    <br>
-
-
-    <table>
       <thead>
-        <tr >
-          <th style="text-align:left">ID</th>
-          <th style="text-align:left">名稱</th>
-          <th style="text-align:left">操作</th>
-        </tr>
+         <tr>
+            <th style="text-align:left">ID</th>
+            <th style="text-align:left">名稱</th>
+            <th style="text-align:left">操作</th>
+          </tr>
       </thead>
       <tbody>
-        @foreach ($articles as $articles_object)
-          <tr>
+          @foreach ($articles as $articles_object)
+         <tr>
             <td>{{ $articles_object->id }}</td>
-            <td>
-              <a href="/articles/{{ $articles_object->id }}">
-                     {{ $articles_object->name }}
-                </a>
-            </td>
-            <td>
-              &nbsp;&nbsp;
-              <form method="POST" action="/articles/{{ $articles_object->id }}">
-                {{ csrf_field() }}  {{-- 安全機制 token碼 防止來自外部的表單送資料進來--}}
-                {{-- 因為html只支援GET&POST,所以要用另外的input帶上PUT --}}
-                {{-- <input type="hidden" name="_method" value="PUT"> --}}
-                {{ method_field('delete') }}
-
-                <button type="submit" class="btn btn-danger">
-                  <a href="/articles/{{ $articles_object->id }}/edit">
-                    <i class="fa fa-pencil"></i>修改
-                  </a>
-                </button>
-                <button type="submit" class="btn btn-danger">
-                   <i class="fa fa-pencil"></i>刪除
-                </button>
+                 <td>
+                    <a href="/articles/{{ $articles_object->id }}">
+                    {{ $articles_object->name }}
+                    </a>
+                  </td>
+                  <td>
+                    <form method="POST" action="/articles/{{ $articles_object->id }}">
+                      {{ csrf_field() }}  {{-- 安全機制 token碼  防止來自外部的表單送資料進來--}}
+                      {{-- 因為html只支援GET&POST,所以要用另外的input帶上PUT --}}
+                      {{-- <input type="hidden" name="_method" value="PUT"> --}}
+                      {{ method_field('delete') }}
+                    <a href="/articles/{{ $articles_object->id }}/edit" class="btn btn-primary">
+                      <i class="fa fa-pencil"></i>修改選項
+                    </a>
+            <button type="submit" class="btn btn-primary">
+             <i class="fa fa-pencil"></i>刪除選項
+           </button>
     {{--         這是之前的寫法 改button才能用class
-                 <input type="submit" value="刪除"> --}}
-              </form>
+    <input type="submit" value="刪除"> --}}
+               </form>
             </td>
-          </tr>
-
-        @endforeach
-
-      </tbody>
-
-      <ul>
-        @foreach ($articles as $articles_object)
-
-          <li></li>
-
-        @endforeach
-      </ul>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
-  </body>
+        </tr>
+          @endforeach
+        </tbody>
+        <ul>
+          @foreach ($articles as $articles_object)
+            <li></li>
+          @endforeach
+        </ul>
+    </table>
+</div>
+@include('articles.scripts')
+</body>
 </html>
 
 

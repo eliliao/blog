@@ -17,7 +17,7 @@
 		<input type="text" name="name" value="{{ $task->name }}">
 	
 	<h4>敘述:</h4>
-		<input type="text" name="description">
+		<textarea name="name" value="{{ $task->name }}" class="form-control" rows="5">
 
 	<br>
 	<br>
