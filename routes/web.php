@@ -446,7 +446,6 @@ Route::post('articles','ArticlesController@store');
 Route::delete('articles/{id}','articlesController@destroy');
 
 
-
 Route::get('category','CategoryController@index');
 
 Route::get('category/create','CategoryController@create');

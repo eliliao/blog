@@ -18,6 +18,7 @@
           <li><a href="/articles">文章管理</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/login">登入</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <img src="https://scontent.ftpe8-3.fna.fbcdn.net/v/t1.0-9/310161_312243918791479_516709523_n.jpg?oh=86235d5a1cabe59a57cffa3f27421d91&oe=5A29650C" style="height:  20px;width: 20px" class="img-circle">
