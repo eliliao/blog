@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
-            $table->integer('is_completed');
+            $table->integer('is_completed')->default(0);
         });
     }
 

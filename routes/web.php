@@ -429,7 +429,6 @@
 
 Route::resource('task','TaskController');
 
-
 Route::get('articles','ArticlesController@index');
 
 Route::get('articles/{id}/edit','ArticlesController@edit');
@@ -445,7 +444,6 @@ Route::post('articles','ArticlesController@store');
 
 Route::delete('articles/{id}','articlesController@destroy');
 
-
 Route::get('category','CategoryController@index');
 
 Route::get('category/create','CategoryController@create');
@@ -459,3 +457,9 @@ Route::get('category/{id}','CategoryController@show');
 Route::post('category','CategoryController@store');
 
 Route::delete('category/{id}','CategoryController@destroy');
+
+Route::get('login','LoginController@showLoginForm');
+
+Route::post('login','LoginController@authenticate');
+
+
